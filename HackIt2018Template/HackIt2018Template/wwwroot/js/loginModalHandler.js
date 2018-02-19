@@ -48,6 +48,7 @@ function StopLoader()
 ///should get called when user presses login btn on login form. This calls the method for login in home controller
 function LoginUser()
 {
+    
     if (ValidateLoginForm()) {
 
 
@@ -70,6 +71,7 @@ function LoginUser()
                     StopLoader();
                     alert("prijava uspješna! :)");
                     modal2.style.display = "none";
+                    getTeamData();
                 },
                 error: function (xhr, status, error) {
                     StopLoader();

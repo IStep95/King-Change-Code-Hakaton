@@ -218,36 +218,10 @@
         </div>
     </div>
 </div>
-<!--project start-->
-<div id="project" class="expandHeightByDefault">
-    <div class="container">
-        <button id="testButton">Test data</button>
-        <table id="dataSearch" class="display">
-            <thead>
-                <tr>
-                    <th>City</th>
-                    <th>Location</th>
-                    <th>Start time</th>
-                    <th>Sport</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 3</td>
-                    <td>Row 1 Data 4</td>
-                </tr>
-
-            </tbody>
-        </table>
-
-    </div>
-</div>
 
 <!--news start-->
 
-<div id="news">
+<div id="details">
     <div class="line4">
         <div class="container">
             <div class="row Ama">
@@ -262,65 +236,77 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 wwa">
-                <span name="about"></span>
-                <h3>Tko su Gamechangeri?</h3>
-                <h4>Gamechangeri su tim od 4 studenta spremnih za <i>King Change Code </i> hakaton 2018. Pravo sudjelovanja na hakatonu osigurali su slanjem ovog super cool rješenja.</h4>
+                <span name="about"></span>          
+                <h3 id="teamName"></h3>
+                <h4 class="gameChangers">Gamechangeri su tim od 4 studenta spremnih za <i>King Change Code </i> hakaton 2018. Pravo sudjelovanja na hakatonu osigurali su slanjem ovog super cool rješenja.</h4>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row team">
             <div class="col-md-3 b1">
-                <img class="img-responsive" src="images/picTeam/picT1.gif">
-                <h4>Tomislav Šipušić</h4>
-                <h5>Backend ninja, great archer</h5>
-                <p>Studira na FER-u. U slobodno vrijeme baca backend šurikene i puca strijele.</p>
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                </ul>
+                <img id="member1Pic" class="img-responsive gameChangers" src="images/picTeam/picT1.gif">
+                <h4 id="member1Name"></h4>
+                <h5 id="member1Email"></h5>
+                <div class="gameChangers">
+                    <h5>Backend ninja, great archer</h5>
+                    <p>Studira na FER-u. U slobodno vrijeme baca backend šurikene i puca strijele.</p>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+                    </ul>
+                </div>        
             </div>
-
+           
 
             <div class="col-md-3">
-                <img class="img-responsive" src="images/picTeam/picT2.gif">
-                <h4>Stjepan Rakarec</h4>
-                <h5>Scrum master, frontend dev</h5>
-                <p>From zero to hero scrum master, project manager, frontend dev i PR stručnjak.</p>
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                </ul>
+                <img id="member2Pic" class="img-responsive" src="images/picTeam/picT4.gif">
+                <h4 id="member2Name"></h4>
+                <h5 id="member2Email"></h5>
+                <div class="gameChangers">
+                    <h5>Frontend dev, game dev</h5>
+                    <p>"Studira" na filozofskom. Tamo također i kodira. Nekad jaše palme.</p>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+                    </ul>
+                </div>
+                
+
             </div>
 
 
             <div class="col-md-3 b3">
-                <img class="img-responsive" src="images/picTeam/picT3.gif">
-                <h4>Ivan Stepanić</h4>
-                <h5>Backend dev</h5>
-                <p>Na FER-u. Još jedan backend ninja.</p>
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                </ul>
+                <img id="member3Pic" class="img-responsive" src="images/picTeam/picT3.gif">
+                <h4 id="member3Name" ></h4>
+                <h5 id="member3Email"></h5> 
+                <div class="gameChangers">
+                    <h5>Backend dev</h5>
+                    <p>Na FER-u. Još jedan backend ninja.</p>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+                    </ul>
+                </div>
             </div>
-
 
             <div class="col-md-3">
-                <img class="img-responsive" src="images/picTeam/picT4.gif">
-                <h4>Ivan Grobenski</h4>
-                <h5>Frontend dev, game dev</h5>
-                <p>"Studira" na filozofskom. Tamo također i kodira. Nekad jaše palme.</p>
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                </ul>
+                <img id="member4Pic" class="img-responsive" src="images/picTeam/picT2.gif">
+                <h4 id="member4Name"></h4>
+                <h5 id="member4Email"></h5>
+                <div class="gameChangers">
+                    <h5>Scrum master, frontend dev</h5>
+                    <p>From zero to hero scrum master, project manager, frontend dev i PR stručnjak.</p>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </div>
-
-
-
+   
     <div class="container hideObj2" style="display:none;">
         <div class="row news2 news">
             <div class="col-md-6 text-right">
@@ -346,7 +332,7 @@
                 <hr class="hrNews">
             </div>
         </div>
-    </div>
+    </div> 
 </div>
 
 
@@ -369,8 +355,7 @@
                     <ul id="downMenu">
                         <li class="active"><a href="#home">Naslovna</a></li>
                         <li><a href="#about">Info</a></li>
-                        <li><a href="#project">Projekti</a></li>
-                        <li><a href="#news">O nama</a></li>
+                        <li><a href="#details">Detalji</a></li>
                         <li class="last"><a href="#contact">Kontakt</a></li>
                         <!--li><a href="#features">Features</a></li-->
                     </ul>
