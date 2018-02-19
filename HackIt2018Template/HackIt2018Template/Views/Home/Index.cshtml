@@ -4,19 +4,23 @@
 
         <div class="modal-content animate" style="width:100%; padding:20px;">
             <div class="row text-center">
+                <img src="~/images/camera-loader.gif" alt="loader" id="loginFormLoader" >
+
                 <h2>Prijavi se kao tim</h2>
+                <p id="errorMessageHolder" style="color:red;"></p>
             </div>
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <i class="fa fa-user fa-5x" style="color:black;"></i>
+
             </div>
 
             <div class="container">
                 <label for="uname"><b>Naziv tima</b></label>
-                <input type="text" placeholder="Naziv tima" name="uname" id="Login_TeamName" style="width:96%;" required>
+                <input type="text" placeholder="Naziv tima" name="uname" id="Login_TeamName" required style="width:96%;" >
 
                 <label for="psw"><b>Lozinka</b></label>
-                <input type="password" placeholder="Lozinka" name="psw" id="Login_password" style="width:96%;" required>
+                <input type="password" placeholder="Lozinka" name="psw" id="Login_password" required style="width:96%;" >
 
                 <button onclick="LoginUser();" style="width:96%;">Prijava</button>
             </div>
