@@ -1,4 +1,158 @@
-﻿<!--about start-->
+﻿<!--modal window for login -->
+<div id="id02" class="modal">
+
+    <form class="modal-content animate" >
+        <div class="row text-center" >
+            <h2>Prijavi se kao tim</h2>
+        </div>
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <i class="fa fa-user fa-5x" style="color:black;"></i>
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Naziv tima</b></label>
+            <input type="text" placeholder="Naziv tima" name="uname" id="Login_TeamName" required>
+
+            <label for="psw"><b>Lozinka</b></label>
+            <input type="password" placeholder="Lozinka" name="psw" id="Login_password" required>
+
+            <button type="submit">Prijava</button>
+         
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+<!-- Modal window for team (Game changers) registration -->
+<div id="id01" class="modal" >
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+        <form class="modal-content animate" onsubmit="SendFormData()" method="post">
+            <div class="container" >
+
+                <h1>Registracija tima</h1>
+                <p>Molimo unesite naziv tima, lozinku, imena i prezimena te e-mailove sva četiri člana tima.</p>
+                <hr>
+
+                <label for="teamName"><b>Naziv tima</b></label>
+                <input type="text" placeholder="Naziv tima" id="TeamName" name="teamNme" required>
+
+                <label for="psw"><b>Lozinka</b></label>
+                <input type="password" placeholder="Lozinka" name="psw" id="TeamPassword" required>
+
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Email" name="email" required>
+
+                <hr />
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="member1"><b>Član 1</b></label>
+                        <i class="fa fa-user" style="color:black;margin-left:5px;"></i>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" class="memberInput" placeholder="Ime" id="member1_name" name="member1" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" class="memberInput" placeholder="Prezime" id="member1_surname" name="member1" required>
+                            </div>
+                        </div>
+
+
+
+                        <input type="email" class="memberInput" style="margin-top:-20px;" placeholder="Email" id="member1_mail" name="email" required>
+
+                        <label for="member3"><b>Član 3</b></label>
+                        <i class="fa fa-user" style="color:black;margin-left:5px;"></i>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" class="memberInput" placeholder="Ime" id="member3_name" name="member3" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" class="memberInput" placeholder="Prezime" id="member3_surname" name="member3" required>
+                            </div>
+                        </div>
+
+                        <input type="email" class="memberInput" style="margin-top:-20px;" placeholder="Email" id="member3_mail" name="email" required>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="member2"><b>Član 2</b></label>
+                        <i class="fa fa-user" style="color:black;margin-left:5px;"></i>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" class="memberInput" placeholder="Ime" id="member2_name" name="member2" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" class="memberInput" placeholder="Prezime" id="member2_surname" name="member2" required>
+                            </div>
+                        </div>
+
+
+                        <input type="email" class="memberInput" style="margin-top:-20px;" placeholder="Email" id="member2_mail" name="email" required>
+
+                        <label for="member4"><b>Član 4</b></label>
+                        <i class="fa fa-user" style="color:black;margin-left:5px;"></i>
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" class="memberInput" placeholder="Ime" id="member4_name" name="member4" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" class="memberInput" placeholder="Prezime" id="member4_surname" name="member4" required>
+                            </div>
+                        </div>
+
+
+                        <input type="email" class="memberInput" style="margin-top:-20px;" id="member4_mail" placeholder="Email" name="email" required>
+                    </div>
+                </div>
+
+
+                <p>Klikom na gumb pošalji, podaci će se poslati na kingov API predviđen za tu namjenu za potrebe <a href="http://changecode.hr" style="color:dodgerblue">King Change Code 2018</a> hakatona.</p>
+
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Zatvori</button>
+                    <button type="submit" class="signupbtn">Registriraj</button>
+                </div>
+            </div>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--about start-->
 <div class="container">
     <div class="row">
         <div class="col-md-4 project">
