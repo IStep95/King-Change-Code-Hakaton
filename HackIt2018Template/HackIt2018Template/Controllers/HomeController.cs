@@ -93,7 +93,7 @@ namespace HackIt2018Template.Controllers
             HttpResponseMessage response = await _repo.TeamDetails(teamId.Value, token);
             JObject responseObject = JObject.Parse(await response.Content.ReadAsStringAsync());
             string responseString = responseObject.GetValue("Result").ToString();
-            return Ok(response);
+            return Ok(responseString);
         }
     }
 }
