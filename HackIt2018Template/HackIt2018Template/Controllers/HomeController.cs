@@ -49,10 +49,24 @@ namespace HackIt2018Template.Controllers
             HttpResponseMessage response = await _repo.Register(teamData.Teamname, teamData.Password, teamData.Members);
 
             if (response.IsSuccessStatusCode)
-            {
-                JObject hackResult = JObject.Parse(await response.Content.ReadAsStringAsync());
-                string hackNextStep = hackResult.GetValue("Result").ToString();
+            {              
                 return Ok("Tim je registriran");
+            }
+            else
+            {
+                JObject responseObject = JObject.Parse(await response.Content.ReadAsStringAsync());
+                return BadRequest(responseObject.GetValue("Errors"));
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Login([FromBody]TeamRegisterViewModel teamData)
+        {
+            HttpResponseMessage response = await _repo.Login(teamData.Teamname, teamData.Password);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return Ok();
             }
             else
             {

@@ -20,6 +20,15 @@ namespace Repository.DataAccess
             _context.setBaseUrl("http://52.233.158.172/change/api/hr/");
         }
 
+        public async Task<HttpResponseMessage> Login(string teamName, string password)
+        {
+            JObject jsonObject = new JObject();
+            jsonObject.Add("Teamname", teamName);
+            jsonObject.Add("Password", password);
+
+            return await _context.PostString("account/login", jsonObject);
+        }
+
         public async Task<HttpResponseMessage> Register(string teamName, string password, List<User> users)
         {
             JObject jsonObject = new JObject();
