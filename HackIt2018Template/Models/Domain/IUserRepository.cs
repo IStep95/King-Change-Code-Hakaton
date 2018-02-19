@@ -10,5 +10,7 @@ namespace Models.Domain
     {
         Task<HttpResponseMessage> Register(string teamName, string password, List<User> users);
         Task<HttpResponseMessage> Login(string teamName, string password);
+        Task<HttpResponseMessage> TeamDetails(int id, string token);
+
     }
 }

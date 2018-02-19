@@ -7,6 +7,8 @@ using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.Net.Http;
 using HackIt2018Template.ViewModels;
+using Microsoft.AspNetCore.Http;
+using System;
 
 namespace HackIt2018Template.Controllers
 {
@@ -66,6 +68,13 @@ namespace HackIt2018Template.Controllers
 
             if (response.IsSuccessStatusCode)
             {
+                JObject responseObject = JObject.Parse(await response.Content.ReadAsStringAsync());
+                string responseString = responseObject.GetValue("Result").ToString();
+                JObject team = JObject.Parse(responseString);
+                string token = team.GetValue("AuthorizationToken").ToString();
+                int id = Int32.Parse(team.GetValue("TeamId").ToString()) ;
+                HttpContext.Session.SetInt32("TeamId", id);
+                HttpContext.Session.SetString("AuthToken", token);
                 return Ok();
             }
             else
@@ -73,6 +82,18 @@ namespace HackIt2018Template.Controllers
                 JObject responseObject = JObject.Parse(await response.Content.ReadAsStringAsync());
                 return BadRequest(responseObject.GetValue("Errors"));
             }
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> TeamDetails()
+        {
+            int? teamId = HttpContext.Session.GetInt32("TeamId");
+            if (teamId == null) return BadRequest();
+            string token = HttpContext.Session.GetString("AuthToken");
+            HttpResponseMessage response = await _repo.TeamDetails(teamId.Value, token);
+            JObject responseObject = JObject.Parse(await response.Content.ReadAsStringAsync());
+            string responseString = responseObject.GetValue("Result").ToString();
+            return Ok(response);
         }
     }
 }

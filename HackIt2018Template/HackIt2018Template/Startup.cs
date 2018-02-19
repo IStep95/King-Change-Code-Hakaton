@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +10,7 @@ using HackIt2018Template.Models;
 using HackIt2018Template.Services;
 using Models.Domain;
 using Repository.DataAccess;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace HackIt2018Template
 {
@@ -40,12 +38,21 @@ namespace HackIt2018Template
             services.AddScoped<IUserRepository, UserRepository>();
 
 
-            services.AddMvc();
+            services.AddMvc().AddSessionStateTempDataProvider();
+            services.AddDistributedMemoryCache();
+            services.AddMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(30);
+                options.Cookie.HttpOnly = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSession();
+
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
@@ -67,6 +74,8 @@ namespace HackIt2018Template
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+      
         }
     }
 }

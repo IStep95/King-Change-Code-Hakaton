@@ -38,5 +38,10 @@ namespace Repository.DataAccess
             
             return await _context.PostString("account/register", jsonObject);
         }
+
+        public async Task<HttpResponseMessage> TeamDetails(int id, string token)
+        {
+            return await _context.GetResponseAuth("team/details/" + id, token);
+        }
     }
 }

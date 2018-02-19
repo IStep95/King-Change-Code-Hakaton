@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,13 @@ namespace Repository.DataAccess
 
         public async Task<HttpResponseMessage> GetResponse(string resourceUrl)
         {
+            var response = await _client.GetAsync(resourceUrl);
+            return response;
+        }
+
+        public async Task<HttpResponseMessage> GetResponseAuth(string resourceUrl, string token)
+        {
+            _client.DefaultRequestHeaders.Add("X-Authorization", token);
             var response = await _client.GetAsync(resourceUrl);
             return response;
         }
