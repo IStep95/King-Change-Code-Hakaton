@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -7,7 +8,6 @@ namespace Models.Domain
 {
     public interface IUserRepository
     {
-        Task<IEnumerable<Event>> GetAllEvents();
-        Task<Event> GetEvent(int id);
+        Task<HttpResponseMessage> Register(string teamName, string password, List<User> users);
     }
 }

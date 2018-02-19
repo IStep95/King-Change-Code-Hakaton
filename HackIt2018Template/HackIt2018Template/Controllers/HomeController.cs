@@ -5,6 +5,8 @@ using HackIt2018Template.Models;
 using Models.Domain;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
+using System.Net.Http;
+using HackIt2018Template.ViewModels;
 
 namespace HackIt2018Template.Controllers
 {
@@ -41,15 +43,22 @@ namespace HackIt2018Template.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [HttpGet]
-        public async Task<JArray> GetAllEvents()
+        [HttpPost]
+        public async Task<ActionResult> Register([FromBody]TeamRegisterViewModel teamData)
         {
-            IEnumerable<Event> events = await _repo.GetAllEvents();
+            HttpResponseMessage response = await _repo.Register(teamData.Teamname, teamData.Password, teamData.Members);
 
-            //naprevi neke akcije s eventima
-
-            //serializiraj natrag u json
-            return JArray.FromObject(events);
+            if (response.IsSuccessStatusCode)
+            {
+                JObject hackResult = JObject.Parse(await response.Content.ReadAsStringAsync());
+                string hackNextStep = hackResult.GetValue("Result").ToString();
+                return Ok("Tim je registriran");
+            }
+            else
+            {
+                JObject responseObject = JObject.Parse(await response.Content.ReadAsStringAsync());
+                return BadRequest(responseObject.GetValue("Errors"));
+            }
         }
     }
 }
