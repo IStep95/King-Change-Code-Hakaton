@@ -1,24 +1,28 @@
 ﻿<!--modal window for login -->
 <div id="id02" class="modal">
-    <div class="modal-content animate" >
-        <div class="row text-center" >
-            <h2>Prijavi se kao tim</h2>
-        </div>
-        <div class="imgcontainer">
-            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <i class="fa fa-user fa-5x" style="color:black;"></i>
-        </div>
+    <div class="container" style=" margin-top:5%;">
 
-        <div class="container">
-            <label for="uname"><b>Naziv tima</b></label>
-            <input type="text" placeholder="Naziv tima" name="uname" id="Login_TeamName" required>
+        <div class="modal-content animate" style="width:100%; padding:20px;">
+            <div class="row text-center">
+                <h2>Prijavi se kao tim</h2>
+            </div>
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <i class="fa fa-user fa-5x" style="color:black;"></i>
+            </div>
 
-            <label for="psw"><b>Lozinka</b></label>
-            <input type="password" placeholder="Lozinka" name="psw" id="Login_password" required>
+            <div class="container">
+                <label for="uname"><b>Naziv tima</b></label>
+                <input type="text" placeholder="Naziv tima" name="uname" id="Login_TeamName" style="width:96%;" required>
 
-            <button onclick="LoginUser();">Prijava</button>
+                <label for="psw"><b>Lozinka</b></label>
+                <input type="password" placeholder="Lozinka" name="psw" id="Login_password" style="width:96%;" required>
+
+                <button onclick="LoginUser();" style="width:96%;">Prijava</button>
+            </div>
         </div>
     </div>
+
 </div>
 
 
@@ -31,10 +35,10 @@
 <!-- Modal window for team (Game changers) registration -->
 <div id="id01" class="modal" >
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <div class="container" >
+        <div class="container" style="width: 80%;">
 
-        <form class="modal-content animate" onsubmit="SendFormData()" method="post">
-            <div class="container" >
-
+            <form class="modal-content animate" style="width:100%; padding:15px;" onsubmit="SendFormData()" method="post">
                 <h1>Registracija tima</h1>
                 <p>Molimo unesite naziv tima, lozinku, imena i prezimena te e-mailove sva četiri člana tima.</p>
                 <hr>
@@ -124,9 +128,11 @@
                     <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Zatvori</button>
                     <button type="submit" class="signupbtn">Registriraj</button>
                 </div>
-            </div>
+            </form>
+        </div>
 
-</form>
+        </div>
+
 
 </div>
 
@@ -155,26 +161,26 @@
     <div class="row">
         <div class="col-md-4 project">
             <h3 id="counter">0</h3>
-            <h4>Statistika 1</h4>
-            <p>Dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et lorem a laoreet phasellus ut nisi id leo molestie. </p>
+            <h4>Sati</h4>
+            <p>Provedenih ispred visual studia  </p>
         </div>
         <div class="col-md-4 project">
             <h3 id="counter1">0</h3>
-            <h4>Statistika 2</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et. laoreet phasellus ut nisi id leo.  </p>
+            <h4>Prijateljstava</h4>
+            <p>Izgubljeno zbog kodiranja vikendima. </p>
         </div>
         <div class="col-md-4 project">
             <h3 id="counter2" style="margin-left: 20px;">0</h3>
-            <h4 style="margin-left: 20px;">Statistika 3</h4>
-            <p>Consectetur adipiscing elit quisque tempus eget diam et laoreet phasellus ut nisi id leo molestie adipiscing vitae a vel. </p>
+            <h4 style="margin-left: 20px;">Kava</h4>
+            <p>ispijeno i pretvoreno u kod visoke kvalitete. </p>
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-md-12 cBusiness">
-            <h3>The Best Way to Create Business Site &ndash; Attractive One Page</h3>
-            <h4>Discover elegant solution for your online business fast, reliable, affordable.</h4>
+            <h3>Najbolji način za privlačenje pozornosti na web stranici?</h3>
+            <h4>Dodavanje generičkih slika s interneta, naravno. Tipa, slike nekih fensi tableta s nasumičnim UI-om</h4>
         </div>
     </div>
 </div>
@@ -191,18 +197,18 @@
             <div class="row Fresh">
                 <div class="col-md-4 Des">
                     <i class="fa fa-heart"></i>
-                    <h4>Fresh & Clean Design</h4>
-                    <p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
+                    <h4>Dizajn svježiji od bakinih piceka</h4>
+                    <p>Bake na balkanu peku uvjek samo najsvježije piceke. Game changeri uvjek rade s najsvježijim dizajnom. Ne čudi što su im većina korisnika, stoga, Rusi. </p>
                 </div>
                 <div class="col-md-4 Ver">
                     <i class="fa fa-cog"></i>
-                    <h4>Very Flexible</h4>
-                    <p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
+                    <h4>Ikona kotačića</h4>
+                    <p>Ovo je ikona kotačića. Nema nikakvu svrhu. Da, ozbiljno.</p>
                 </div>
                 <div class="col-md-4 Fully">
                     <i class="fa fa-tablet"></i>
-                    <h4>Fully Responsive</h4>
-                    <p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
+                    <h4>Kvadrat kao mobitel</h4>
+                    <p>Uvjek smo se pitali zašto se ikone kvadrata koriste kao simbol responzivnosti web stranice.</p>
                 </div>
             </div>
         </div>
