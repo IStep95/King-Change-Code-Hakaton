@@ -1,10 +1,12 @@
-﻿
+﻿var modal2;
+
+
 function DisplayLoginModalProcedure() {
 
     document.getElementById('id02').style.display = 'block';
 
     // Get the login modal
-    var modal2 = document.getElementById('id02');
+    modal2 = document.getElementById('id02');
 
     // When the user clicks anywhere outside of the login modal, close it
     window.onclick = function (event) {
@@ -28,7 +30,9 @@ function LoginUser()
         dataType: 'json',
         async: false,
         success: function (data) {
-            alert(data);
+            alert("prijava uspješna! :)");
+            modal2.style.display = "none";
+
         },
         error: function (xhr, status, error) {
             alert(xhr.responseText);
