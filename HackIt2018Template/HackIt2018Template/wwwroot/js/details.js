@@ -11,7 +11,7 @@ function getTeamData(){
         type: 'GET',    
         dataType: 'json',
         success: function (data) {
-       
+
             console.log("success");
 
             var detailsDiv = document.getElementById("details");
@@ -32,19 +32,21 @@ function getTeamData(){
                document.getElementById(memberMailId).innerHTML = teamMembers[i - 1].Mail;
             }
 
-            var elements = document.getElementsByClassName('gameChangers');
-            var i;
-            for (i = 0; i < elements.length; i++) {
+            var gameChangerDevs = document.getElementsByClassName('gameChangersDevs');
+            for (i = 1; i <= gameChangerDevs.length; i++) {
+                var memberPicId = "member" + i.toString() + "Pic";
+
                if (teamName == "Game_changers")
                {
-                    console.log("GameChangers");
-                    elements[i].style.visibility = "visible";
+                   console.log("GameChangers");
+                   $(".gameChangersDevs").show();
+                   var gameChangerPicName = "picT" + i.toString() + ".gif";
+                   document.getElementById(memberPicId).src = "images/picTeam/" + gameChangerPicName;
                 }
                 else
                 {
-                    console.log("Drugi tim");
-                    elements[i].style.visibility = "hidden";
-                    var memberPicId = "member" + i.toString() + "Pic";
+                   console.log("Drugi tim");
+                   $(".gameChangersDevs").hide();
                     document.getElementById(memberPicId).src="images/placeholderPerson.png";
                 }
              }

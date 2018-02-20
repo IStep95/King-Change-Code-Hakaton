@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -60,7 +63,7 @@
 
 </head>
 <body>
-        
+
     <!--home start-->
     <div id="home">
         <div class="headerLine">
@@ -74,7 +77,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="logo col-md-3">
+                        <div class="logo col-md-2">
                             <form href="#project" onsubmit="searchSubmit()" class="search-form" id="homeSearchBar">
                                 <div class="form-group has-feedback">
                                     <label for="search" class="sr-only">Search</label>
@@ -83,7 +86,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-9">
                             <div class="navmenu" style="text-align: center;">
                                 <ul id="menu">
                                     <li class="active"><a href="#home">Naslovna</a></li>
@@ -91,13 +94,24 @@
                                     <li><a href="#details">Detalji</a></li>
                                     <li class="last"><a href="#contact">Kontakt</a></li>
                                     <li><a href="#Registracija" onclick="DisplayRegisterModalProcedure();" style="width:auto;">Registracija</a></li>
-                                    <li><a href="#Prijava" onclick="DisplayLoginModalProcedure(); " style="width:auto;">Prijava</a></li>
+
+                                    @if (@HttpContextAccessor.HttpContext.Session.GetInt32("TeamId") == null)
+                                    {
+                                        <li><a href="#Prijava" onclick="DisplayLoginModalProcedure(); " style="width:auto;">Prijava</a></li>
+                                    }
+                                    else
+                                    { 
+                                        <li><a href="#Odjava" onclick="Logout();" style="width:auto;">Odjava [@HttpContextAccessor.HttpContext.Session.GetString("TeamName")]</a></li>
+                                    }
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
             <div class="container">
                 <div class="row wrap">
                     <div class="col-md-12 gallery">

@@ -71,7 +71,7 @@ function LoginUser()
                     StopLoader();
                     alert("prijava uspješna! :)");
                     modal2.style.display = "none";
-                    getTeamData();
+                    location.reload();
                 },
                 error: function (xhr, status, error) {
                     StopLoader();
@@ -126,7 +126,21 @@ function GetLoginFormData()
 
 
 
-
+function Logout()
+{
+    $.ajax({
+        type: 'POST',
+        url: 'Home/Logout',
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        async: false,
+        success: function (data) {
+            location.reload();
+        },
+        error: function (xhr, status, error) {
+        }
+    });
+}
 
 
 

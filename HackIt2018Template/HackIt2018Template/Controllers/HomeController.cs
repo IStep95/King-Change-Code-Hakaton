@@ -26,20 +26,6 @@ namespace HackIt2018Template.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-             
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
@@ -75,6 +61,7 @@ namespace HackIt2018Template.Controllers
                 int id = Int32.Parse(team.GetValue("TeamId").ToString()) ;
                 HttpContext.Session.SetInt32("TeamId", id);
                 HttpContext.Session.SetString("AuthToken", token);
+                HttpContext.Session.SetString("TeamName", teamData.Teamname);
                 return Ok();
             }
             else
@@ -94,6 +81,16 @@ namespace HackIt2018Template.Controllers
             JObject responseObject = JObject.Parse(await response.Content.ReadAsStringAsync());
             string responseString = responseObject.GetValue("Result").ToString();
             return Ok(responseString);
+        }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            int? teamId = HttpContext.Session.GetInt32("TeamId");
+            if (teamId == null) return BadRequest();
+            HttpContext.Session.Clear();
+            return Ok();
+
         }
     }
 }
