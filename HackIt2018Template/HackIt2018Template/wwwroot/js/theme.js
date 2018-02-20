@@ -99,7 +99,7 @@ function calculateScroll() {
     var winTop      =   $(window).scrollTop();
     var rangeTop    =   200;
     var rangeBottom =   500;
-    $('.navmenu').find('a').each(function(){
+    $('.menu').find('a').each(function(){
         contentTop.push( $( $(this).attr('href') ).offset().top );
         contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
     })
